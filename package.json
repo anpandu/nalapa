@@ -1,0 +1,14 @@
+{
+  "name": "nalapa",
+  "description": "",
+  "version": "0.0.0",
+  "main": "nalapa.js",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "underscore": "*"
+  },
+  "scripts": {
+    "test": "mocha --no-colors --reporter spec"
+  }
+}
