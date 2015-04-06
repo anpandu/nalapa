@@ -19,7 +19,7 @@ npm install
 Tokenizer = require('modules/tokenizer.js')
 
 Tokenizer.tokenize("Hello world, my name is Alice...")
-/* ["Hello", "world", ",", "my", "name", "is", "Alice", ".", ".", "."] */
+/* ['Hello', 'world', ',', 'my', 'name', 'is', 'Alice', '.', '.', '.'] */
 
 Tokenizer.tokenize("Monday, (1/11). I have 1.000 rupiah.")
 /* [ 'Monday', ',', '(', '1/11', ')', '.', 'I', 'have', '1.000', 'rupiah', '.' ] */
@@ -45,6 +45,8 @@ Cleaner.removeNonASCII("ابت");			/* "" */
 Cleaner.removeNonAlphaNumeric("abc123");		/* abc123 */
 Cleaner.removeNonAlphaNumeric("abc_-8+");		/* abc8 */
 Cleaner.removeNonAlphaNumeric("ابت");			/* "" */
+
+Cleaner.removeHTMLTags("<p class="long">some long paragraph</p>");			/* "some long paragraph" */
 
 ```
 

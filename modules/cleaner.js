@@ -32,4 +32,8 @@ Cleaner.prototype.removeNonAlphaNumeric = function(_text) {
 	return _text.replace(/[^a-zA-Z0-9]/g, "");
 }
 
+Cleaner.prototype.removeHTMLTags = function(_text) {
+	return _text.replace(/<[^>]*>?/g, "");
+}
+
 module.exports = new Cleaner ();
