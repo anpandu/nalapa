@@ -5,21 +5,32 @@
 
 ## Installation
 
-Install with npm:
+Install node modules with npm:
 
 ```
-npm install --save jsmodule1
+npm install
 ```
 
 
 ## API
 
-### jsmodule1()
+### Tokenizer
+
+### BIO Label
+
+### Feature Extractor
+
 
 
 ## Testing
 
 From the repo root:
+
+```
+npm install
+npm test
+```
+or
 
 ```
 npm install
