@@ -1,6 +1,6 @@
 # NALAPA
 
-[![Build Status](https://secure.travis-ci.org/user/nalapa.png?branch=master)](http://travis-ci.org/user/nalapa)
+[![Build Status](https://secure.travis-ci.org/anpandu/nalapa.png?branch=master)](http://travis-ci.org/anpandu/nalapa)
 
 
 ## Installation
