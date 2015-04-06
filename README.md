@@ -1,6 +1,6 @@
-# jsmodule1
+# NALAPA
 
-[![Build Status](https://secure.travis-ci.org/user/jsmodule1.png?branch=master)](http://travis-ci.org/user/jsmodule1)
+[![Build Status](https://secure.travis-ci.org/user/nalapa.png?branch=master)](http://travis-ci.org/user/nalapa)
 
 
 ## Installation
@@ -15,11 +15,24 @@ npm install
 ## API
 
 ### Tokenizer
+```
+Tokenizer = require('modules/tokenizer.js')
+
+Tokenizer.tokenize("Hello world, my name is Alice...")
+/* ["Hello", "world", ",", "my", "name", "is", "Alice", ".", ".", "."] */
+
+Tokenizer.tokenize("Monday, (1/11). I have 1.000 rupiah.")
+/* [ 'Monday', ',', '(', '1/11', ')', '.', 'I', 'have', '1.000', 'rupiah', '.' ] */
+
+```
 
 ### BIO Label
+```
+```
 
 ### Feature Extractor
-
+```
+```
 
 
 ## Testing
@@ -34,5 +47,5 @@ or
 
 ```
 npm install
-npm test
+mocha
 ```
