@@ -5,7 +5,7 @@
 /**
  * Module dependencies
  */
-var _ = require('underscore');
+var _ = require('lodash');
 var Tokenizer = require('../modules/tokenizer.js');
 
 /**
