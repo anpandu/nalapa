@@ -19,12 +19,11 @@
     "url": "git+https://github.com/anpandu/nalapa.git"
   },
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "3.10.1"
   },
   "devDependencies": {
     "chai": "*",
-    "mocha": "*",
-    "underscore": "*"
+    "mocha": "*"
   },
   "scripts": {
     "test": "mocha --recursive"
