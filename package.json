@@ -1,8 +1,23 @@
 {
   "name": "nalapa",
-  "description": "",
-  "version": "0.0.0",
-  "main": "nalapa.js",
+  "description": "Collection of NLP tools for NodeJS.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "modules",
+    "stdlib",
+    "util"
+  ],
+  "author": {
+    "name": "Ananta Pandu Wicaksana",
+    "email": "anpandumail@gmail.com",
+    "url": "http://twiter.com/anpandu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anpandu/nalapa.git"
+  },
   "dependencies": {
     "lodash": "^3.10.1"
   },
@@ -12,6 +27,6 @@
     "underscore": "*"
   },
   "scripts": {
-    "test": "mocha --no-colors --reporter spec"
+    "test": "mocha --recursive"
   }
 }

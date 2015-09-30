@@ -2,7 +2,7 @@
 var expect = require('chai').expect;
 var assert = require('chai').assert;
 
-var cleaner = require('../modules/cleaner.js');
+var cleaner = require('../../modules/cleaner.js');
 
 describe('Cleaner', function () {
 
