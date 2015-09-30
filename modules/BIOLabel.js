@@ -26,24 +26,30 @@ BIOLabel.prototype.label = function(_data) {
   data['labels'] = new Array(tokens.length);
   for (var i = 0; i < data['labels'].length; i++)
     data['labels'][i] = []
-  
-  // concat 'begin' & 'in' to data['labels']
-  for (var label in _data.labels){
-    var labelWords = Tokenizer.tokenize(_data.labels[label]);
-    // get array of match val between text and  label word (true|false)
-    var matchArray = _.map(data['tokens'], function (edata, idata) {
-      var matchLabelWords = _.map(labelWords, function (elw, ilw) { return elw == data['tokens'][idata+ilw]; });
-      return _.every(matchLabelWords, _.identity);
-    });
-    // concat 'begin' & 'in' data['labels'] right now
-    var count = 0;
-    _.each(matchArray, function (match, idx){
-      count = ((match == true)||(count>0 && count<labelWords.length)) ? count+1 : 0;
-      if (count == 1)
-        data['labels'][idx] = data['labels'][idx].concat("b_" + label);
-      else if (count>0 && count<=labelWords.length)
-        data['labels'][idx] = data['labels'][idx].concat("i_" + label);
-    });   
+
+
+  var labels = _data.labels;
+  for (var key in labels){
+    labels[key].forEach(function (label) {
+      var labelString = label;
+      var labelWords = Tokenizer.tokenize(labelString);
+
+      // get array of match val between text and  label word (true|false)
+      var matchArray = _.map(data['tokens'], function (edata, idata) {
+        var matchLabelWords = _.map(labelWords, function (elw, ilw) { return elw == data['tokens'][idata+ilw]; });
+        return _.every(matchLabelWords, _.identity);
+      });
+      
+      // concat 'begin' & 'in' data['labels'] right now
+      var count = 0;
+      _.each(matchArray, function (match, idx){
+        count = ((match == true)||(count>0 && count<labelWords.length)) ? count+1 : 0;
+        if (count == 1)
+          data['labels'][idx] = data['labels'][idx].concat("b_" + key);
+        else if (count>0 && count<=labelWords.length)
+          data['labels'][idx] = data['labels'][idx].concat("i_" + key);
+      });   
+    })
   }
 
   // concat 'other' to data['labels']
