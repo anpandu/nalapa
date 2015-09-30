@@ -2,7 +2,7 @@
 var expect = require('chai').expect;
 var assert = require('chai').assert;
 
-var tokenizer = require('../modules/tokenizer.js');
+var tokenizer = require('../../modules/tokenizer.js');
 
 describe('Tokenizer', function () {
     it('tokenize', function () {

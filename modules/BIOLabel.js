@@ -14,9 +14,9 @@ var Tokenizer = require('../modules/tokenizer.js');
  * @api public
  */
 
-var BIOlabel = function () {};
+var BIOLabel = function () {};
 
-BIOlabel.prototype.label = function(_data) {
+BIOLabel.prototype.label = function(_data) {
 
   var text = (_.isUndefined(_data.text)) ? '' : _data.text;
   var tokens = Tokenizer.tokenize(text);
@@ -55,4 +55,4 @@ BIOlabel.prototype.label = function(_data) {
   return data;
 }
 
-module.exports = new BIOlabel ();
+module.exports = new BIOLabel ();

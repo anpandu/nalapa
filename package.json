@@ -12,6 +12,6 @@
     "underscore": "*"
   },
   "scripts": {
-    "test": "mocha --no-colors --reporter spec"
+    "test": "mocha --recursive"
   }
 }
