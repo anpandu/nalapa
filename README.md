@@ -55,39 +55,39 @@ Cleaner.removeHTMLTags("<p class="long">some long paragraph</p>");          /* "
 BIOLabel = require('nalapa').BIOLabel;
 
 var data = {
-  'text' : 'i eat nasi goreng for breakfast, lunch, and dinner',
-  'labels' : {
-    'food' : 'nasi goreng'
+  text : 'i eat nasi goreng for breakfast, lunch, and dinner',
+  labels : {
+    'food' : ['nasi goreng']
   }
-};
+}
 
 BIOLabel.label(data);
 {
-  'tokens' : ['i', 'eat', 'nasi', 'goreng', 'for', 'breakfast', ',', 'lunch', ',', 'and', 'dinner'],
-  'labels' : [['other'], ['other'], ['b_food'], ['i_food'], ['other'], ['other'], ['other'], ['other'], ['other'], ['other'], ['other']]
+  tokens : ['i', 'eat', 'nasi', 'goreng', 'for', 'breakfast', ',', 'lunch', ',', 'and', 'dinner'],
+  labels : [['other'], ['other'], ['b_food'], ['i_food'], ['other'], ['other'], ['other'], ['other'], ['other'], ['other'], ['other']]
 } 
 
 var data2 = {
-  'text' : 'i eat nasi goreng at midnight too',
-  'labels' : {
-    'who' : 'i',
-    'what' : 'i eat nasi goreng'
+  text : 'i eat nasi goreng at midnight too',
+  labels : {
+    who : ['i'],
+    what : ['i eat nasi goreng']
   }
-};
+}
 
 BIOLabel.label(data2);
 {
-  'tokens' : ['i', 'eat', 'nasi', 'goreng', 'at', 'midnight', 'too'],
-  'labels' : [['b_who', 'b_what'], ['i_what'], ['i_what'], ['i_what'], ['other'], ['other'], ['other']]
+  tokens : ['i', 'eat', 'nasi', 'goreng', 'at', 'midnight', 'too'],
+  labels : [['b_who', 'b_what'], ['i_what'], ['i_what'], ['i_what'], ['other'], ['other'], ['other']]
 }
 
 var data3 = {
-  'text' : 'if you are reading this, you are reading this',
-  'labels' : {
-    'person' : 'you',
-    'activity' : 'you are reading'
+  text : 'if you are reading this, you are reading this',
+  labels : {
+    person : ['you'],
+    activity : ['you are reading']
   }
-};
+}
 
 BIOLabel.label(data3);
 { 
@@ -95,12 +95,21 @@ BIOLabel.label(data3);
   labels: [['other'], ['b_person', 'b_activity'], ['i_activity'], ['i_activity'], ['other'], ['other'], ['b_person', 'b_activity'], ['i_activity'], ['i_activity'], ['other']]
 }
 
-```
+var data4 = {
+  text : 'friday, saturday, and sunday morning',
+  labels : {
+    day_name : ['friday', 'saturday', 'sunday'],
+    time : ['sunday morning']
+  }
+}
 
-### Feature Extractor
-```
-```
+BIOLabel.label(data4);
+{
+  tokens : [ 'friday', ',', 'saturday', ',', 'and', 'sunday', 'morning' ],
+  labels : [ ['b_day_name'], ['other'], ['b_day_name'], ['other'], ['other'], ['b_day_name', 'b_time'], ['i_time'] ]
+}
 
+```
 
 ## Testing
 
