@@ -79,7 +79,7 @@ describe('BIOLabel', function () {
 
   it('should not return \'other\' BIO label if no \'labels\' field found', function () {
     var data = {};
-    var ans = {tokens : [''], labels : [['other']]}
+    var ans = {tokens : [], labels : []}
     var res = BIOLabel.label(data);
     assert.lengthOf(res['labels'], ans['labels'].length);
     assert.deepEqual(res, ans);
