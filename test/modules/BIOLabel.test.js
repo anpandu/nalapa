@@ -9,9 +9,9 @@ describe('BIOLabel', function () {
   it('should return bio label from single tag', function () {
     var data = {
       text : 'i eat nasi goreng for breakfast, lunch, and dinner',
-      labels : {
-        food : ['nasi goreng']
-      }
+      labels : [
+        { label : 'food', words : ['nasi goreng'] }
+      ]
     };
     var ans = {
       tokens : ['i', 'eat', 'nasi', 'goreng', 'for', 'breakfast', ',', 'lunch', ',', 'and', 'dinner'],
@@ -25,10 +25,10 @@ describe('BIOLabel', function () {
   it('should return bio label from multiple tag', function () {
     var data2 = {
       text : 'i eat nasi goreng at midnight too',
-      labels : {
-        who : ['i'],
-        what : ['i eat nasi goreng']
-      }
+      labels : [
+        { label : 'who', words : ['i'] },
+        { label : 'what', words : ['i eat nasi goreng'] }
+      ]
     };
     var ans2 = {
       tokens : ['i', 'eat', 'nasi', 'goreng', 'at', 'midnight', 'too'],
@@ -42,10 +42,10 @@ describe('BIOLabel', function () {
 
     var data3 = {
       text : 'if you are reading this, you are reading this',
-      labels : {
-        person : ['you'],
-        activity : ['you are reading']
-      }
+      labels : [
+        { label : 'person', words : ['you'] },
+        { label : 'activity', words : ['you are reading'] }
+      ]
     };
     var ans3 = { 
       tokens: ['if', 'you', 'are', 'reading', 'this', ',', 'you', 'are', 'reading', 'this'],
@@ -61,10 +61,10 @@ describe('BIOLabel', function () {
   it('should return bio label from multiple words in one tag', function () {
     var data = {
       text : 'friday, saturday, and sunday morning',
-      labels : {
-        day_name : ['friday', 'saturday', 'sunday'],
-        time : ['sunday morning']
-      }
+      labels : [
+        { label : 'day_name', words : ['friday', 'saturday', 'sunday'] },
+        { label : 'time', words : ['sunday morning'] }
+      ]
     };
     var ans = {
       tokens : [ 'friday', ',', 'saturday', ',', 'and', 'sunday', 'morning' ],
