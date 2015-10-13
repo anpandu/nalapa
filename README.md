@@ -56,9 +56,9 @@ BIOLabel = require('nalapa').BIOLabel;
 
 var data = {
   text : 'i eat nasi goreng for breakfast, lunch, and dinner',
-  labels : {
-    'food' : ['nasi goreng']
-  }
+  labels : [
+    { label : 'food', words : ['nasi goreng'] }
+  ]
 }
 
 BIOLabel.label(data);
@@ -69,10 +69,10 @@ BIOLabel.label(data);
 
 var data2 = {
   text : 'i eat nasi goreng at midnight too',
-  labels : {
-    who : ['i'],
-    what : ['i eat nasi goreng']
-  }
+  labels : [
+    { label : 'who', words : ['i'] },
+    { label : 'what', words : ['i eat nasi goreng'] }
+  ]
 }
 
 BIOLabel.label(data2);
@@ -83,10 +83,10 @@ BIOLabel.label(data2);
 
 var data3 = {
   text : 'if you are reading this, you are reading this',
-  labels : {
-    person : ['you'],
-    activity : ['you are reading']
-  }
+  labels : [
+    { label : 'person', words : ['you'] },
+    { label : 'activity', words : ['you are reading'] }
+  ]
 }
 
 BIOLabel.label(data3);
@@ -97,10 +97,10 @@ BIOLabel.label(data3);
 
 var data4 = {
   text : 'friday, saturday, and sunday morning',
-  labels : {
-    day_name : ['friday', 'saturday', 'sunday'],
-    time : ['sunday morning']
-  }
+  labels : [
+    { label : 'day_name', words : ['friday', 'saturday', 'sunday'] },
+    { label : 'time', words : ['sunday morning'] }
+  ]
 }
 
 BIOLabel.label(data4);
