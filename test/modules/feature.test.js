@@ -36,17 +36,17 @@ describe('Feature', function () {
     assert.deepEqual(feature.isContainsYear(''), false);
   });
 
-  it('isContainsRomanNumber', function () {
-    assert.deepEqual(feature.isContainsRomanNumber('I'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('V'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('X'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('L'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('D'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('C'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('M'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('MCMXCII'), true);
-    assert.deepEqual(feature.isContainsRomanNumber('MCMXCIIPOPO'), false);
-    assert.deepEqual(feature.isContainsRomanNumber('abc123'), false);
+  it('isRomanNumber', function () {
+    assert.deepEqual(feature.isRomanNumber('I'), true);
+    assert.deepEqual(feature.isRomanNumber('V'), true);
+    assert.deepEqual(feature.isRomanNumber('X'), true);
+    assert.deepEqual(feature.isRomanNumber('L'), true);
+    assert.deepEqual(feature.isRomanNumber('D'), true);
+    assert.deepEqual(feature.isRomanNumber('C'), true);
+    assert.deepEqual(feature.isRomanNumber('M'), true);
+    assert.deepEqual(feature.isRomanNumber('MCMXCII'), true);
+    assert.deepEqual(feature.isRomanNumber('MCMXCIIPOPO'), false);
+    assert.deepEqual(feature.isRomanNumber('abc123'), false);
   });
 
   it('isAllCapital', function () {
@@ -63,11 +63,11 @@ describe('Feature', function () {
     assert.deepEqual(feature.isContainsNonAlphanumeric(''), false);
   });
 
-  it('isPunctuation', function () {
-    assert.deepEqual(feature.isPunctuation('abcd;'), true);
-    assert.deepEqual(feature.isPunctuation(';'), true);
-    assert.deepEqual(feature.isPunctuation('abcd'), false);
-    assert.deepEqual(feature.isPunctuation(''), false);
+  it('isContainsPunctuation', function () {
+    assert.deepEqual(feature.isContainsPunctuation('abcd;'), true);
+    assert.deepEqual(feature.isContainsPunctuation(';'), true);
+    assert.deepEqual(feature.isContainsPunctuation('abcd'), false);
+    assert.deepEqual(feature.isContainsPunctuation(''), false);
   });
 
 });
