@@ -36,7 +36,7 @@ Feature.prototype.isContainsYear = function(_text) {
   return /^.*[0-9]{4}.*$/.test(_text);
 }
 
-Feature.prototype.isContainsRomanNumber = function(_text) {
+Feature.prototype.isRomanNumber = function(_text) {
   return /^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$/.test(_text);
 }
 
@@ -54,7 +54,7 @@ Feature.prototype.isContainsNonAlphanumeric = function(_text) {
     return false;
 }
 
-Feature.prototype.isPunctuation = function(_text) {
+Feature.prototype.isContainsPunctuation = function(_text) {
   return /^.*[\.\,\;\[\]\-\_\:\}\{\/\>\<\=\+\)\(\*]+.*$/.test(_text);
 }
 

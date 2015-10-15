@@ -8,7 +8,7 @@
 Install node modules with npm:
 
 ```
-npm install
+npm install --save nalapa
 ```
 
 
@@ -111,15 +111,42 @@ BIOLabel.label(data4);
 
 ```
 
+### Feature
+```
+feature = require('nalapa').feature;
+
+feature.isEquals('hehe', 'hehe') // true
+feature.isEquals('hehe', 'hoho') // false
+
+feature.isAllCapital('ABCD') // true
+feature.isAllCapital('Abcd') // false
+
+feature.isBeginsWithCapital('ABc') // true
+feature.isBeginsWithCapital('aBC') // false
+
+feature.isContainsNumber('he1he') // true
+feature.isContainsNumber('hehe') // false
+
+feature.isContainsYear('1985haihai') // true
+feature.isContainsYear('hoho') // false
+feature.isContainsYear('666') // false
+
+feature.isRomanNumber('MCMXCII') // true
+feature.isRomanNumber('MCMXCIIPOPO') // false
+
+feature.isContainsNonAlphanumeric('abc') // false
+feature.isContainsNonAlphanumeric('@bc') // true
+
+feature.isContainsPunctuation('abcd;') // true
+feature.isContainsPunctuation(';') // true
+feature.isContainsPunctuation('abcd') // false
+
+```
+
 ## Testing
 
 From the repo root:
 
 ```
 npm test
-```
-or
-
-```
-mocha
 ```
