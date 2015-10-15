@@ -65,6 +65,12 @@ Tokenizer.prototype.tokenize = function(_sentence) {
   return words;
 };
 
+Tokenizer.prototype.splitSentence = function(_sentence) {
+  var words = _sentence.split(/\.\ |\!\ |\?\ |\ \-\ |\.$|\!$|\?$\s*/);
+  words = _.without(words, '');
+  return words;
+};
+
 /**
  * Module exports
  */
