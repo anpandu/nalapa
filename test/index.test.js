@@ -19,4 +19,8 @@ describe('Index', function () {
     assert(!_.isUndefined(index.BIOLabel), 'BIOLabel not found')
   })
 
+  it('should contains feature', function () {
+    assert(!_.isUndefined(index.feature), 'feature not found')
+  })
+
 })
