@@ -24,6 +24,15 @@ Tokenizer.tokenize("Hello world, my name is Alice...")
 Tokenizer.tokenize("Monday, (1/11). I have 1.000 rupiah.")
 [ 'Monday', ',', '(', '1/11', ')', '.', 'I', 'have', '1.000', 'rupiah', '.' ]
 
+Tokenizer.splitSentence("Hello world, my name is Alice! I live in Bandung. Jakarta kebanjiran gara-gara hujan - tugas kuliah sulit? Baiklah.");
+[
+  "Hello world, my name is Alice",
+  "I live in Bandung",
+  "Jakarta kebanjiran gara-gara hujan",
+  "tugas kuliah sulit",
+  "Baiklah"
+];
+
 ```
 
 ### Cleaner

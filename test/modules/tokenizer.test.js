@@ -32,5 +32,22 @@ describe('Tokenizer', function () {
       assert.deepEqual(t, tokenss[i]);
     };
   });
+
+
+  it('splitSentence', function () {
+    var text = "Hello world, my name is Alice! I live in Bandung. Jakarta kebanjiran gara-gara hujan - tugas kuliah sulit? Baiklah.";
+    var sentence = [
+      "Hello world, my name is Alice",
+      "I live in Bandung",
+      "Jakarta kebanjiran gara-gara hujan",
+      "tugas kuliah sulit",
+      "Baiklah"
+    ];
+
+    var result = tokenizer.splitSentence(text);
+    assert.deepEqual(result.length, sentence.length);
+    for (var i = 0; i < sentence.length; i++)
+        assert.deepEqual(true, result[i] == sentence[i]);
+  });
     
 });
