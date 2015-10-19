@@ -22,6 +22,8 @@ Feature.prototype.isEquals = function(_text, _text2) {
 
 Feature.prototype.isBeginsWithCapital = function(_text) {
   if (_text) { 
+    if (_text.length==0)
+      return false;
     var firstLetter = _text[0];
     return (firstLetter == firstLetter.toUpperCase()); 
   } else
