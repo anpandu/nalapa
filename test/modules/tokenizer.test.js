@@ -10,7 +10,7 @@ describe('Tokenizer', function () {
     // test cases
     sentences = [
       "Hello world, my name is Alice...",
-      "kerusuhan yang terjadi di sana?\"Panik.\".\r\n\r\nTOKOH utama film ini diperankan oleh",
+      "kerusuhan yang terjadi di sana?\"Panik.\".\r\n\r\n\tTOKOH utama film ini diperankan oleh",
       "Monday, (1/11). I have 1.000 rupiah.",
       "single",
       " betweenspaces ",
