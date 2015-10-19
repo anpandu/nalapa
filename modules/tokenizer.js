@@ -58,7 +58,7 @@ Tokenizer.prototype._splitPunctuationLeft = function(_words) {
 };
 
 Tokenizer.prototype.tokenize = function(_sentence) {
-  var words = _sentence.split(' ');
+  var words = _sentence.split(/[ \r\n]/);
   words = _.without(words, '');
   words = Tokenizer.prototype._splitPunctuationRight(words);
   words = Tokenizer.prototype._splitPunctuationLeft(words);
