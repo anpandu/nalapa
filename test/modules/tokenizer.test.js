@@ -37,13 +37,15 @@ describe('Tokenizer', function () {
 
 
   it('splitSentence', function () {
-    var text = "Hello world, my name is Alice! I live in Bandung. Jakarta kebanjiran gara-gara hujan - tugas kuliah sulit? Baiklah.";
+    var text = "Hello world, my name is Alice! I live in Bandung. Jakarta kebanjiran gara-gara hujan - tugas kuliah sulit? Baiklah.\r\nHa.\n\rHa.";
     var sentence = [
       "Hello world, my name is Alice",
       "I live in Bandung",
       "Jakarta kebanjiran gara-gara hujan",
       "tugas kuliah sulit",
-      "Baiklah"
+      "Baiklah",
+      "Ha",
+      "Ha"
     ];
 
     var result = tokenizer.splitSentence(text);

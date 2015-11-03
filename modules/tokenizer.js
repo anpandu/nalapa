@@ -34,7 +34,7 @@ Tokenizer.prototype.tokenize = function(_sentence) {
 };
 
 Tokenizer.prototype.splitSentence = function(_sentence) {
-  var words = _sentence.split(/\.\ |\!\ |\?\ |\ \-\ |\.$|\!$|\?$\s*/);
+  var words = _sentence.split(/(?:\.|\!|\?|\ -)(?:\s|\r|\n)*/);
   words = _.without(words, '');
   return words;
 };
