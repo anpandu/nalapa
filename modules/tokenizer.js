@@ -22,8 +22,9 @@ Tokenizer.prototype._isPunctuation = function(_char) {
 
 Tokenizer.prototype.tokenize = function(_sentence) {
   var words = _sentence.replace(/([^a-zA-Z0-9])/g, function(match) { return "\|"+match+"\|"; })
-  var words = words.replace(/(\d)\|([\.\/])\|(\d)/g, function(match, $1, $2, $3) { return $1+$2+$3; })
-  var words = words.split(/\|/);
+  words = words.replace(/(\d)\|([\.\/])\|(\d)/g, function(match, $1, $2, $3) { return $1+$2+$3; })
+  words = words.replace(/([^\s])\|([\-])\|([^\s])/g, function(match, $1, $2, $3) { return $1+$2+$3; })
+  words = words.split(/\|/);
   words = _.without(words, '\|');
   words = _.without(words, ' ');
   words = _.without(words, '\r');

@@ -15,7 +15,9 @@ describe('Tokenizer', function () {
       "single",
       " betweenspaces ",
       " ",
-      ""
+      "",
+      "PDI-P",
+      "PDI - P"
     ];
     // answers
     tokenss = [
@@ -25,7 +27,9 @@ describe('Tokenizer', function () {
       ["single"],
       ["betweenspaces"],
       [],
-      []
+      [],
+      ["PDI-P"],
+      ["PDI","-","P"]
     ];
     for (var i = 0; i < sentences.length; i++) {
       t = tokenizer.tokenize(sentences[i]);
