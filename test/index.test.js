@@ -1,9 +1,9 @@
 
-var _ = require('lodash');
-var expect = require('chai').expect;
-var assert = require('chai').assert;
+var _ = require('lodash')
+var expect = require('chai').expect
+var assert = require('chai').assert
 
-var index = require('../index.js');
+var index = require('../index.js')
 
 describe('Index', function () {
 
