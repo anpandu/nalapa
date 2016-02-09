@@ -23,4 +23,8 @@ describe('Index', function () {
     assert(!_.isUndefined(index.feature), 'feature not found')
   })
 
+  it('should contains word', function () {
+    assert(!_.isUndefined(index.word), 'word not found')
+  })
+
 })
