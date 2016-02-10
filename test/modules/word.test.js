@@ -240,6 +240,11 @@ describe('Word', function () {
         assert.deepEqual(word.stemConfix('berserakan'), 'serak')
         assert.deepEqual(word.stemConfix('berebutan'), 'rebut')
       })
+
+      it('Per- -an', function () {
+        assert.deepEqual(word.stemConfix('pertemuan'), 'temu')
+        assert.deepEqual(word.stemConfix('pekerjaan'), 'kerja')
+      })
     })
 
   })
