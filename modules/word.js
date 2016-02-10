@@ -19,6 +19,7 @@ var v = require('./dictionary/v.js')
 
 var prefix = require('./dictionary/stemming/prefix.js')
 var suffix = require('./dictionary/stemming/suffix.js')
+var confix = require('./dictionary/stemming/confix.js')
 
 /**
  * @param {}
@@ -110,6 +111,38 @@ Word.prototype.stemSuffix = function(word) {
         result = word.substring(0, limit)
       return result
     })
+    .filter(function (c) { return c !== '' })
+    .filter(function (c) { return Word.prototype.isBasicWord(c) })
+    .value()
+  var result = (candidate.length>0) ? candidate[0] : word
+  return result
+}
+
+Word.prototype.stemConfix = function(word) {
+  var candidate = _.chain(confix)
+    .map(function (p) {
+      var confix = p[0]
+      var starts = p[1]
+      var dissolve = p[2]
+      var end = p[3]
+      var result = []
+      if (word.indexOf(confix) == 0) {
+        result = starts.map(function (start) {
+          var sub = word.substring(confix.length)
+          sub = (dissolve) ? start+sub : sub
+          if ((sub.indexOf(start) == 0) || (start == '*')) {
+            var limit = sub.length-end.length
+            if (sub.lastIndexOf(end) == limit)
+              sub = sub.substring(0, limit)
+            return sub
+          }
+          else
+            return ''
+        })
+      }
+      return result
+    })
+    .flatten()
     .filter(function (c) { return c !== '' })
     .filter(function (c) { return Word.prototype.isBasicWord(c) })
     .value()
