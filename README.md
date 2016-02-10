@@ -15,28 +15,59 @@ npm install --save nalapa
 ## API
 
 ### Tokenizer
-```
+```js
 Tokenizer = require('nalapa').tokenizer;
 
 Tokenizer.tokenize("Hello world, my name is Alice...")
-['Hello', 'world', ',', 'my', 'name', 'is', 'Alice', '.', '.', '.']
+// ['Hello', 'world', ',', 'my', 'name', 'is', 'Alice', '.', '.', '.']
 
 Tokenizer.tokenize("Monday, (1/11). I have 1.000 rupiah.")
-[ 'Monday', ',', '(', '1/11', ')', '.', 'I', 'have', '1.000', 'rupiah', '.' ]
+// [ 'Monday', ',', '(', '1/11', ')', '.', 'I', 'have', '1.000', 'rupiah', '.' ]
 
 Tokenizer.splitSentence("Hello world, my name is Alice! I live in Bandung. Jakarta kebanjiran gara-gara hujan - tugas kuliah sulit? Baiklah.");
+/*
 [
   "Hello world, my name is Alice",
   "I live in Bandung",
   "Jakarta kebanjiran gara-gara hujan",
   "tugas kuliah sulit",
   "Baiklah"
-];
+]
+*/
+
+```
+
+### Word
+```js
+Word = require('nalapa').word;
+
+// stopword
+word.isStopword("adalah") // true
+word.isStopword("Indonesia") // false
+
+// basic word properties
+word.isBasicWord('masak')  // true
+word.isAdjective('abadi')  // true
+word.isAdverb('adakala')  // true
+word.isNum('wahid')  // true
+word.isPre('adapun')  // true
+word.isPron('aku')  // true
+word.isVerb('ambil')  // true
+word.isBasicWord('wrongxxx') // false
+
+// stemming
+word.stem('memberikan') // beri
+word.stem('meong') // meong
+
+// stemming for prefix, suffix, or confix
+word.stemPrefix('penyadap') // sadap
+word.stemSuffix('minuman') // minum
+word.stemConfix('memberikan') // beri
 
 ```
 
 ### Cleaner
-```
+```js
 Cleaner = require('nalapa').cleaner;
 
 Cleaner.isASCII("abc123");      /* true */
@@ -60,7 +91,7 @@ Cleaner.removeHTMLTags("<p class="long">some long paragraph</p>");          /* "
 ```
 
 ### BIO Label
-```
+```js
 BIOLabel = require('nalapa').BIOLabel;
 
 var data = {
@@ -71,10 +102,12 @@ var data = {
 }
 
 BIOLabel.label(data);
+/*
 {
   tokens : ['i', 'eat', 'nasi', 'goreng', 'for', 'breakfast', ',', 'lunch', ',', 'and', 'dinner'],
   labels : [['other'], ['other'], ['b_food'], ['i_food'], ['other'], ['other'], ['other'], ['other'], ['other'], ['other'], ['other']]
-} 
+}
+*/ 
 
 var data2 = {
   text : 'i eat nasi goreng at midnight too',
@@ -85,10 +118,12 @@ var data2 = {
 }
 
 BIOLabel.label(data2);
+/*
 {
   tokens : ['i', 'eat', 'nasi', 'goreng', 'at', 'midnight', 'too'],
   labels : [['b_who', 'b_what'], ['i_what'], ['i_what'], ['i_what'], ['other'], ['other'], ['other']]
 }
+*/
 
 var data3 = {
   text : 'if you are reading this, you are reading this',
@@ -99,10 +134,12 @@ var data3 = {
 }
 
 BIOLabel.label(data3);
+/*
 { 
   tokens: ['if', 'you', 'are', 'reading', 'this', ',', 'you', 'are', 'reading', 'this'],
   labels: [['other'], ['b_person', 'b_activity'], ['i_activity'], ['i_activity'], ['other'], ['other'], ['b_person', 'b_activity'], ['i_activity'], ['i_activity'], ['other']]
 }
+*/
 
 var data4 = {
   text : 'friday, saturday, and sunday morning',
@@ -113,15 +150,17 @@ var data4 = {
 }
 
 BIOLabel.label(data4);
+/*
 {
   tokens : [ 'friday', ',', 'saturday', ',', 'and', 'sunday', 'morning' ],
   labels : [ ['b_day_name'], ['other'], ['b_day_name'], ['other'], ['other'], ['b_day_name', 'b_time'], ['i_time'] ]
 }
+*/
 
 ```
 
 ### Feature
-```
+```js
 feature = require('nalapa').feature;
 
 feature.isEquals('hehe', 'hehe') // true
