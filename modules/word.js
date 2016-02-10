@@ -150,4 +150,14 @@ Word.prototype.stemConfix = function(word) {
   return result
 }
 
+Word.prototype.stem = function(word) {
+  var candidate = []
+  candidate.push(Word.prototype.stemConfix(word))
+  candidate.push(Word.prototype.stemPrefix(word))
+  candidate.push(Word.prototype.stemSuffix(word))
+  candidate = candidate.filter(function (c) { return c !== word})
+  var result = (candidate.length>0) ? candidate[0] : word
+  return result
+}
+
 module.exports = new Word ()
