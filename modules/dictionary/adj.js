@@ -4384,6 +4384,7 @@ module.exports = [
 "tayib",
 "tayibah",
 "teatris",
+"tebal",
 "tedas",
 "teduh",
 "tega",
