@@ -204,7 +204,33 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('terbaik'), 'baik')
         assert.deepEqual(word.stemPrefix('tertawa'), 'tawa')
       })
+    })
 
+    describe('Suffix', function () {
+
+      it('-kan', function () {
+        assert.deepEqual(word.stemSuffix('ambilkan'), 'ambil')
+        assert.deepEqual(word.stemSuffix('bagikan'), 'bagi')
+        assert.deepEqual(word.stemSuffix('kandaskan'), 'kandas')
+        assert.deepEqual(word.stemSuffix('basahkan'), 'basah')
+        assert.deepEqual(word.stemSuffix('bacakan'), 'baca')
+      })
+
+      it('-i', function () {
+        assert.deepEqual(word.stemSuffix('ambili'), 'ambil')
+        assert.deepEqual(word.stemSuffix('bagii'), 'bagi')
+        assert.deepEqual(word.stemSuffix('indahi'), 'indah')
+        assert.deepEqual(word.stemSuffix('basahi'), 'basah')
+        assert.deepEqual(word.stemSuffix('bacai'), 'baca')
+      })
+
+      it('-an', function () {
+        assert.deepEqual(word.stemSuffix('ambilan'), 'ambil')
+        assert.deepEqual(word.stemSuffix('bagian'), 'bagi')
+        assert.deepEqual(word.stemSuffix('minuman'), 'minum')
+        assert.deepEqual(word.stemSuffix('basahan'), 'basah')
+        assert.deepEqual(word.stemSuffix('bacaan'), 'baca')
+      })
     })
 
   })

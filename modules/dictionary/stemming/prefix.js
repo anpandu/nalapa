@@ -31,5 +31,4 @@ module.exports = [
   ['pel', ['ajar'], false],
   ['se', ['*'], false],
   ['ter', ['*']],
-  // ['ke', ['']],
 ]

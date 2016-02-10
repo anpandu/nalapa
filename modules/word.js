@@ -18,7 +18,7 @@ var pron = require('./dictionary/pron.js')
 var v = require('./dictionary/v.js')
 
 var prefix = require('./dictionary/stemming/prefix.js')
-var sufix = require('./dictionary/stemming/sufix.js')
+var suffix = require('./dictionary/stemming/suffix.js')
 
 /**
  * @param {}
@@ -93,6 +93,23 @@ Word.prototype.stemPrefix = function(word) {
       return result
     })
     .flatten()
+    .filter(function (c) { return c !== '' })
+    .filter(function (c) { return Word.prototype.isBasicWord(c) })
+    .value()
+  var result = (candidate.length>0) ? candidate[0] : word
+  return result
+}
+
+Word.prototype.stemSuffix = function(word) {
+  var candidate = _.chain(suffix)
+    .map(function (s) {
+      var suffix = s
+      var result = ''
+      var limit = word.length-suffix.length
+      if (word.lastIndexOf(suffix) == limit)
+        result = word.substring(0, limit)
+      return result
+    })
     .filter(function (c) { return c !== '' })
     .filter(function (c) { return Word.prototype.isBasicWord(c) })
     .value()
