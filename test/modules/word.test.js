@@ -233,6 +233,15 @@ describe('Word', function () {
       })
     })
 
+    describe('Confix', function () {
+
+      it('Ber- -an', function () {
+        assert.deepEqual(word.stemConfix('berciuman'), 'cium')
+        assert.deepEqual(word.stemConfix('berserakan'), 'serak')
+        assert.deepEqual(word.stemConfix('berebutan'), 'rebut')
+      })
+    })
+
   })
 
 })
