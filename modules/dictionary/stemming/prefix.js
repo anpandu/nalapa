@@ -30,6 +30,6 @@ module.exports = [
   ['peny', ['s'], true],
   ['pel', ['ajar'], false],
   ['se', ['*'], false],
-  // ['ter', ['']],
+  ['ter', ['*']],
   // ['ke', ['']],
 ]

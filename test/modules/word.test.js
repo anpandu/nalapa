@@ -191,6 +191,20 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('seingat'), 'ingat')
       })
 
+      it('Se-', function () {
+        // se-
+        assert.deepEqual(word.stemPrefix('sebagus'), 'bagus')
+        assert.deepEqual(word.stemPrefix('seingat'), 'ingat')
+      })
+
+      it('Ter-', function () {
+        // ter-
+        assert.deepEqual(word.stemPrefix('terbuka'), 'buka')
+        assert.deepEqual(word.stemPrefix('teringat'), 'ingat')
+        assert.deepEqual(word.stemPrefix('terbaik'), 'baik')
+        assert.deepEqual(word.stemPrefix('tertawa'), 'tawa')
+      })
+
     })
 
   })

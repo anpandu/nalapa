@@ -2938,6 +2938,7 @@ module.exports = [
 "taung",
 "taur",
 "taut",
+"tawa",
 "tawadu",
 "tawaf",
 "tawajuh",
