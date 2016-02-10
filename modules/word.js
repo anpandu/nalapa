@@ -7,7 +7,9 @@
  */
 
 var _ = require('lodash')
+
 var stopwords = require('./dictionary/indonesian-stopwords-complete.js')
+
 var adj = require('./dictionary/adj.js')
 var adv = require('./dictionary/adv.js')
 var num = require('./dictionary/num.js')
@@ -15,6 +17,8 @@ var pre = require('./dictionary/pre.js')
 var pron = require('./dictionary/pron.js')
 var v = require('./dictionary/v.js')
 
+var prefix = require('./dictionary/stemming/prefix.js')
+var sufix = require('./dictionary/stemming/sufix.js')
 
 /**
  * @param {}
@@ -67,6 +71,33 @@ Word.prototype.isBasicWord = function(word) {
     Word.prototype.isPron(word) ||
     Word.prototype.isVerb(word)
   )
+}
+
+Word.prototype.stemPrefix = function(word) {
+  var candidate = _.chain(prefix)
+    .map(function (p) {
+      var prefix = p[0]
+      var starts = p[1]
+      var dissolve = p[2]
+      var result = []
+      if (word.indexOf(prefix) == 0) {
+        result = starts.map(function (start) {
+          var sub = word.substring(prefix.length)
+          sub = (dissolve) ? start+sub : sub
+          if ((sub.indexOf(start) == 0) || (start == '*'))
+            return sub
+          else
+            return ''
+        })
+      }
+      return result
+    })
+    .flatten()
+    .filter(function (c) { return c !== '' })
+    .filter(function (c) { return Word.prototype.isBasicWord(c) })
+    .value()
+  var result = (candidate.length>0) ? candidate[0] : word
+  return result
 }
 
 module.exports = new Word ()
