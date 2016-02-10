@@ -5,7 +5,6 @@ module.exports = [
 "apakah",
 "apakala",
 "apatah",
-"awat",
 "bagaimana",
 "begini",
 "begitu",

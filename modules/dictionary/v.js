@@ -2840,6 +2840,7 @@ module.exports = [
 "suntih",
 "suntik",
 "sunu",
+"suruh",
 "suruk",
 "susul",
 "susung",

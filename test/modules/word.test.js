@@ -134,6 +134,57 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('dibuka'), 'buka')
       })
 
+      it('Pe-', function () {
+        // per-
+        assert.deepEqual(word.stemPrefix('perbagus'), 'bagus')
+        // pe-
+        assert.deepEqual(word.stemPrefix('pelari'), 'lari')
+        assert.deepEqual(word.stemPrefix('perumit'), 'rumit')
+        assert.deepEqual(word.stemPrefix('pesuruh'), 'suruh')
+        assert.deepEqual(word.stemPrefix('pekerja'), 'kerja')
+        // pe-
+        assert.deepEqual(word.stemPrefix('pelarang'), 'larang')
+        assert.deepEqual(word.stemPrefix('perawat'), 'rawat')
+        assert.deepEqual(word.stemPrefix('penyanyi'), 'nyanyi')
+        assert.deepEqual(word.stemPrefix('pemasak'), 'masak')
+        assert.deepEqual(word.stemPrefix('pelipat'), 'lipat')
+        assert.deepEqual(word.stemPrefix('perobek'), 'robek')
+        assert.deepEqual(word.stemPrefix('pengaji'), 'ngaji')
+        // pem-
+        assert.deepEqual(word.stemPrefix('pemberi'), 'beri')
+        assert.deepEqual(word.stemPrefix('pemprotes'), 'protes')
+        // pe-m-
+        assert.deepEqual(word.stemPrefix('pemahat'), 'pahat')
+        assert.deepEqual(word.stemPrefix('pemanas'), 'panas')
+        // pen-
+        assert.deepEqual(word.stemPrefix('pencangkul'), 'cangkul')
+        assert.deepEqual(word.stemPrefix('pendengar'), 'dengar')
+        assert.deepEqual(word.stemPrefix('penjahit'), 'jahit')
+        // pe-n-
+        assert.deepEqual(word.stemPrefix('penebang'), 'tebang')
+        assert.deepEqual(word.stemPrefix('penebal'), 'tebal')
+        // peng-
+        assert.deepEqual(word.stemPrefix('pengajar'), 'ajar')
+        assert.deepEqual(word.stemPrefix('pengingat'), 'ingat')
+        assert.deepEqual(word.stemPrefix('pengusap'), 'usap')
+        assert.deepEqual(word.stemPrefix('pengejek'), 'ejek')
+        assert.deepEqual(word.stemPrefix('pengomel'), 'omel')
+        assert.deepEqual(word.stemPrefix('penghirup'), 'hirup')
+        assert.deepEqual(word.stemPrefix('penggugat'), 'gugat')
+        // pe-ng-
+        assert.deepEqual(word.stemPrefix('pengail'), 'kail')
+        assert.deepEqual(word.stemPrefix('pengeras'), 'keras')
+        // penge-
+        assert.deepEqual(word.stemPrefix('pengetes'), 'tes')
+        assert.deepEqual(word.stemPrefix('pengebom'), 'bom')
+        // pe-ny-
+        assert.deepEqual(word.stemPrefix('penyadap'), 'sadap')
+        assert.deepEqual(word.stemPrefix('penyempit'), 'sempit')
+        assert.deepEqual(word.stemPrefix('penyatu'), 'satu')
+        // pel-
+        assert.deepEqual(word.stemPrefix('pelajar'), 'ajar')
+      })
+
     })
 
   })
