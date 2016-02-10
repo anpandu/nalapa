@@ -8,10 +8,13 @@ module.exports = [
   ['meng', ['k'], true],
   ['menge', ['*'], false],
   ['meny', ['s'], true],
-  // ['ber', ''],
-  // ['di', ''],
-  // ['ter', ''],
-  // ['ke', ''],
-  // ['per', ''],
-  // ['se', '']
+  ['ber', ['*'], false],
+  ['be', ['r'], false],
+  ['be', ['*'], false],
+  ['bel', ['ajar'], false],
+  // ['di', ['']],
+  // ['ter', ['']],
+  // ['ke', ['']],
+  // ['per', ['']],
+  // ['se', ['']]
 ]

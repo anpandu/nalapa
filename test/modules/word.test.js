@@ -113,6 +113,21 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('meong'), 'meong')
       })
 
+      it('Ber-', function () {
+        // ber-
+        assert.deepEqual(word.stemPrefix('berbicara'), 'bicara')
+        assert.deepEqual(word.stemPrefix('berada'), 'ada')
+        assert.deepEqual(word.stemPrefix('berbeda'), 'beda')
+        assert.deepEqual(word.stemPrefix('bersatu'), 'satu')
+        assert.deepEqual(word.stemPrefix('bertobat'), 'tobat')
+        assert.deepEqual(word.stemPrefix('berpikir'), 'pikir')
+        // be-
+        assert.deepEqual(word.stemPrefix('berupa'), 'rupa')
+        assert.deepEqual(word.stemPrefix('bekerja'), 'kerja')
+        // bel-
+        assert.deepEqual(word.stemPrefix('belajar'), 'ajar')
+      })
+
     })
 
   })
