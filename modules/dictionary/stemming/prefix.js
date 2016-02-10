@@ -12,7 +12,7 @@ module.exports = [
   ['be', ['r'], false],
   ['be', ['*'], false],
   ['bel', ['ajar'], false],
-  // ['di', ['']],
+  ['di', ['*'], false],
   // ['ter', ['']],
   // ['ke', ['']],
   // ['per', ['']],

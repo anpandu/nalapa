@@ -128,6 +128,12 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('belajar'), 'ajar')
       })
 
+      it('Di-', function () {
+        // di-
+        assert.deepEqual(word.stemPrefix('diajar'), 'ajar')
+        assert.deepEqual(word.stemPrefix('dibuka'), 'buka')
+      })
+
     })
 
   })
