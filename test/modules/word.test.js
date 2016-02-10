@@ -287,6 +287,12 @@ describe('Word', function () {
         assert.deepEqual(word.stemConfix('penyempitan'), 'sempit')
         assert.deepEqual(word.stemConfix('penyatuan'), 'satu')
       })
+
+      it('Ke- -an', function () {
+        assert.deepEqual(word.stemConfix('kelaparan'), 'lapar')
+        assert.deepEqual(word.stemConfix('kepergian'), 'pergi')
+        assert.deepEqual(word.stemConfix('kepanasan'), 'panas')
+      })
     })
 
   })

@@ -12,4 +12,6 @@ module.exports = [
   ['peng', ['k'], true, 'an'],
   ['penge', ['*'], false, 'an'],
   ['peny', ['s'], true, 'an'],
+
+  ['ke', ['*'], false, 'an'],
 ]
