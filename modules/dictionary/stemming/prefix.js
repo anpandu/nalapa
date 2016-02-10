@@ -29,7 +29,7 @@ module.exports = [
   ['penge', ['*'], false],
   ['peny', ['s'], true],
   ['pel', ['ajar'], false],
+  ['se', ['*'], false],
   // ['ter', ['']],
   // ['ke', ['']],
-  // ['se', ['']]
 ]

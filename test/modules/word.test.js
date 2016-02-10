@@ -185,6 +185,12 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('pelajar'), 'ajar')
       })
 
+      it('Se-', function () {
+        // se-
+        assert.deepEqual(word.stemPrefix('sebagus'), 'bagus')
+        assert.deepEqual(word.stemPrefix('seingat'), 'ingat')
+      })
+
     })
 
   })
