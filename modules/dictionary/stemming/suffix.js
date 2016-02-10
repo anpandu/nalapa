@@ -1,5 +1,5 @@
 module.exports = [
   "kan",
   "i",
-// "an"
+  "an",
 ]
