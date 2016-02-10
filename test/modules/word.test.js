@@ -215,6 +215,14 @@ describe('Word', function () {
         assert.deepEqual(word.stemSuffix('basahkan'), 'basah')
         assert.deepEqual(word.stemSuffix('bacakan'), 'baca')
       })
+
+      it('-i', function () {
+        assert.deepEqual(word.stemSuffix('ambili'), 'ambil')
+        assert.deepEqual(word.stemSuffix('bagii'), 'bagi')
+        assert.deepEqual(word.stemSuffix('indahi'), 'indah')
+        assert.deepEqual(word.stemSuffix('basahi'), 'basah')
+        assert.deepEqual(word.stemSuffix('bacai'), 'baca')
+      })
     })
 
   })
