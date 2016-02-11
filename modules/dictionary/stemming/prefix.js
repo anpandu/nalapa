@@ -4,7 +4,7 @@ module.exports = [
   ['mem', ['p'], true],
   ['men', ['c', 'd', 'j'], false],
   ['men', ['t'], true],
-  ['meng', ['a', 'i', 'u', 'e', 'o', 'g', 'h'], false],
+  ['meng', ['a', 'i', 'u', 'e', 'o', 'g', 'h', 'kl'], false],
   ['meng', ['k'], true],
   ['menge', ['*'], false],
   ['meny', ['s'], true],
