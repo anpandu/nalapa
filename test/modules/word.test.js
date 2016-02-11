@@ -391,6 +391,10 @@ describe('Word', function () {
       it('Di- -i', function () {
         assert.deepEqual(word.stemConfix('disadari'), 'sadar')
       })
+
+      it('Ter- -kan', function () {
+        assert.deepEqual(word.stemConfix('terpikirkan'), 'pikir')
+      })
     })
 
     describe('All', function () {

@@ -40,4 +40,6 @@ module.exports = [
   ['meny', ['s'], true, 'i'],
 
   ['di', ['*'], false, 'i'],
+
+  ['ter', ['*'], false, 'kan'],
 ]

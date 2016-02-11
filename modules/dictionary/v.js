@@ -2724,6 +2724,7 @@ module.exports = [
 "seropot",
 "serosoh",
 "serot",
+"serta",
 "sertu",
 "seruak",
 "seruduk",
