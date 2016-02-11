@@ -27,4 +27,17 @@ module.exports = [
   ['meny', ['s'], true, 'kan'],
 
   ['di', ['*'], false, 'kan'],
+
+  ['mer', ['*'], false, 'i'],
+  ['me', ['*'], false, 'i'],
+  ['mem', ['b', 'pr'], false, 'i'],
+  ['mem', ['p'], true, 'i'],
+  ['men', ['c', 'd', 'j'], false, 'i'],
+  ['men', ['t'], true, 'i'],
+  ['meng', ['a', 'i', 'u', 'e', 'o', 'g', 'h'], false, 'i'],
+  ['meng', ['k'], true, 'i'],
+  ['menge', ['*'], false, 'i'],
+  ['meny', ['s'], true, 'i'],
+
+  ['di', ['*'], false, 'i'],
 ]
