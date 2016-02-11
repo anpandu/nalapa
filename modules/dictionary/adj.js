@@ -3909,6 +3909,7 @@ module.exports = [
 "sedat",
 "sedeng",
 "sederhana",
+"sedia",
 "sedikit",
 "sedimenter",
 "sega",

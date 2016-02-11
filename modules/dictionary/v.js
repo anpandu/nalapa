@@ -1529,6 +1529,7 @@ module.exports = [
 "kompes",
 "konan",
 "kondangan",
+"konfirmasi",
 "kongko",
 "konstatir",
 "konter",
