@@ -3758,7 +3758,6 @@ module.exports = [
 "ripuh",
 "ripuk",
 "risau",
-"risi",
 "riskan",
 "ritmis",
 "ritual",

@@ -99,6 +99,7 @@ describe('Word', function () {
         assert.deepEqual(word.stemPrefix('mengomel'), 'omel')
         assert.deepEqual(word.stemPrefix('menghirup'), 'hirup')
         assert.deepEqual(word.stemPrefix('menggugat'), 'gugat')
+        assert.deepEqual(word.stemPrefix('mengklaim'), 'klaim')
         // me-ng-
         assert.deepEqual(word.stemPrefix('mengail'), 'kail')
         assert.deepEqual(word.stemPrefix('mengeras'), 'keras')
@@ -208,6 +209,7 @@ describe('Word', function () {
         assert.deepEqual(word.stemSuffix('kandaskan'), 'kandas')
         assert.deepEqual(word.stemSuffix('basahkan'), 'basah')
         assert.deepEqual(word.stemSuffix('bacakan'), 'baca')
+        assert.deepEqual(word.stemSuffix('manfaatkan'), 'manfaat')
       })
 
       it('-i', function () {
@@ -286,6 +288,53 @@ describe('Word', function () {
         assert.deepEqual(word.stemConfix('kelaparan'), 'lapar')
         assert.deepEqual(word.stemConfix('kepergian'), 'pergi')
         assert.deepEqual(word.stemConfix('kepanasan'), 'panas')
+      })
+
+      it('Me- -kan', function () {
+        // me- -kan
+        assert.deepEqual(word.stemConfix('melarangkan'), 'larang')
+        assert.deepEqual(word.stemConfix('merawatkan'), 'rawat')
+        assert.deepEqual(word.stemConfix('menyanyikan'), 'nyanyi')
+        assert.deepEqual(word.stemConfix('memasakkan'), 'masak')
+        assert.deepEqual(word.stemConfix('melipatkan'), 'lipat')
+        assert.deepEqual(word.stemConfix('merobekkan'), 'robek')
+        assert.deepEqual(word.stemConfix('mengajikan'), 'ngaji')
+        // mem- -kan
+        assert.deepEqual(word.stemConfix('memberikan'), 'beri')
+        assert.deepEqual(word.stemConfix('memproteskan'), 'protes')
+        // me-m- -kan
+        assert.deepEqual(word.stemConfix('memahatkan'), 'pahat')
+        assert.deepEqual(word.stemConfix('memanaskan'), 'panas')
+        // men- -kan
+        assert.deepEqual(word.stemConfix('mencangkulkan'), 'cangkul')
+        assert.deepEqual(word.stemConfix('mendengarkan'), 'dengar')
+        assert.deepEqual(word.stemConfix('menjahitkan'), 'jahit')
+        // me-n- -kan
+        assert.deepEqual(word.stemConfix('menebangkan'), 'tebang')
+        assert.deepEqual(word.stemConfix('menebalkan'), 'tebal')
+        // meng- -kan
+        assert.deepEqual(word.stemConfix('mengajarkan'), 'ajar')
+        assert.deepEqual(word.stemConfix('mengingatkan'), 'ingat')
+        assert.deepEqual(word.stemConfix('mengusapkan'), 'usap')
+        assert.deepEqual(word.stemConfix('mengejekkan'), 'ejek')
+        assert.deepEqual(word.stemConfix('mengomelkan'), 'omel')
+        assert.deepEqual(word.stemConfix('menghirupkan'), 'hirup')
+        assert.deepEqual(word.stemConfix('menggugatkan'), 'gugat')
+        // me-ng- -kan
+        assert.deepEqual(word.stemConfix('mengailkan'), 'kail')
+        assert.deepEqual(word.stemConfix('mengeraskan'), 'keras')
+        assert.deepEqual(word.stemConfix('mengumpulkan'), 'kumpul')
+        // menge- -kan
+        assert.deepEqual(word.stemConfix('mengeteskan'), 'tes')
+        assert.deepEqual(word.stemConfix('mengebomkan'), 'bom')
+        // me-ny- -kan
+        assert.deepEqual(word.stemConfix('menyadapkan'), 'sadap')
+        assert.deepEqual(word.stemConfix('menyempitkan'), 'sempit')
+        assert.deepEqual(word.stemConfix('menyatukan'), 'satu')
+      })
+
+      it('Di- -kan', function () {
+        assert.deepEqual(word.stemConfix('dibatalkan'), 'batal')
       })
     })
 
