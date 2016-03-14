@@ -1,6 +1,7 @@
 # NALAPA
+Collection of NodeJS NLP Library for Bahasa Indonesia.
 
-[![Build Status](https://secure.travis-ci.org/anpandu/nalapa.png?branch=master)](http://travis-ci.org/anpandu/nalapa)
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 
 ## Installation
@@ -198,3 +199,15 @@ From the repo root:
 ```
 npm test
 ```
+
+## License
+
+MIT © [Ananta Pandu](anpandu.com)
+
+
+[npm-image]: https://badge.fury.io/js/nalapa.svg
+[npm-url]: https://npmjs.org/package/nalapa
+[travis-image]: https://travis-ci.org/anpandu/nalapa.svg?branch=master
+[travis-url]: https://travis-ci.org/anpandu/nalapa
+[daviddm-image]: https://david-dm.org/anpandu/nalapa.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/anpandu/nalapa
