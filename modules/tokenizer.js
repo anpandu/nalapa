@@ -1,4 +1,4 @@
-/*! jsmodule1 v0.0.0 - MIT license */
+/*! Nalapa v1.10.0 - MIT license */
 
 'use strict'
 
