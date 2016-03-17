@@ -42,6 +42,24 @@ Tokenizer.prototype.splitSentence = function(_sentence) {
   return words
 }
 
+Tokenizer.prototype.getQuotations = function(_sentence) {
+  return getAllMatches(/"[^"]+"[^"\.]+\./g, _sentence)
+    .map(function (matches) { return matches[0] })
+}
+
+var getAllMatches = function (regex, text) {
+    var res = []
+    var match = null
+    if (regex.global)
+      while (match = regex.exec(text)) {
+        res.push(match)
+      }
+    else
+      if (match = regex.exec(text))
+        res.push(match)
+    return res
+}
+
 /**
  * Module exports
  */
