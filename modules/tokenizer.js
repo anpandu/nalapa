@@ -34,11 +34,17 @@ Tokenizer.prototype.tokenize = function(_sentence) {
   return words
 }
 
-Tokenizer.prototype.splitSentence = function(_sentence) {
-  var words = _sentence
+Tokenizer.prototype.splitSentence = function(_text) {
+  var text = _text
+  var quotations = getInsideQuotations(text)
+  quotations
+    .map(function(quo) { return transformEvade(quo) })
+    .forEach(function (quo, idx) { text = text.replace(quotations[idx], quo) })
+  var words = text
     .replace(/(\.|\!|\?|\ -)(?:\s|\r|\n)+/g, '$1_SPLIT_')
     .split('_SPLIT_')
   words = _.without(words, '')
+  words = words.map(function (word) { return transformEvade(word, true) })
   return words
 }
 
@@ -51,12 +57,27 @@ var getAllMatches = function (regex, text) {
     var res = []
     var match = null
     if (regex.global)
-      while (match = regex.exec(text)) {
+      while (match = regex.exec(text))
         res.push(match)
-      }
     else
       if (match = regex.exec(text))
         res.push(match)
+    return res
+}
+
+var getInsideQuotations = function(_sentence) { return getAllMatches(/("[^"]+")[^"\.]+\./g, _sentence).map(function (matches) { return matches[1] }) }
+
+var transformEvade = function (text, reverse) {
+    var res = text
+    var rgxs = [".", "!", "?", " -"]
+    var reps = ["_DOT_", "_EXC_", "_QUO_", "_SD_"]
+    if (reverse) {
+      for (var i = 0; i < rgxs.length; i++)
+        res = res.replace(new RegExp(reps[i], 'g'), rgxs[i])
+    }
+    else
+      for (var i = 0; i < reps.length; i++)
+        res = res.replace(new RegExp('\\'+rgxs[i], 'g'), reps[i])
     return res
 }
 
