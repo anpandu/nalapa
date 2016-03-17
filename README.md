@@ -36,6 +36,17 @@ Tokenizer.splitSentence("Hello world, my name is Alice! I live in Bandung. Jakar
 ]
 */
 
+var text = "Seorang remaja berinisal HAS (15) ditangkap aparat Polres Magelang lantaran diduga ..."
+Tokenizer.getQuotations(text);
+/*
+[
+  "\"Mereka beraksi siang hari, sekitar pukul 13.00 WIB akhir pekan lalu. Saat itu korban terlihat sendirian,\" kata Zain dalam gelar perkara, Selasa (16/2/2016).", 
+  "\"Korban mengenali ponsel yang dipegang saksi adalah miliknya, baru kemudian ia melapor ke Polsek Kajoran. Saksi tersebut mengatakan kalau ponsel tersebut dibeli dari tetangga seharga Rp 250.000,\" papar mantan Kapolsek Metro Tamansari, Jakarta itu.", 
+  "\"Kami masih koordinasi dengan pihak terkait apakah pelaku HAS ini akan menjalani diversi atau tidak,\" katanya.", 
+  "\"Ponselnya saya jual lagi, uangnya buat bantu mertua yang mau nikah lagi. Saya dulu sales di Sumatera tapi sekarang nganggur,\" ucap bapak dari dua anak ini."
+]
+*/
+
 ```
 
 ### Word
