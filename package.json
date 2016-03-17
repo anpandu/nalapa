@@ -1,7 +1,7 @@
 {
   "name": "nalapa",
   "description": "Collection of NodeJS NLP Library for Bahasa Indonesia.",
-  "version": "1.9.3",
+  "version": "1.10.0",
   "license": "MIT",
   "main": "index.js",
   "keywords": [
@@ -21,7 +21,7 @@
     "url": "git+https://github.com/anpandu/nalapa.git"
   },
   "dependencies": {
-    "lodash": "3.10.1"
+    "lodash": "4.6.1"
   },
   "devDependencies": {
     "chai": "*",
