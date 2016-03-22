@@ -169,6 +169,17 @@ BIOLabel.label(data4);
 }
 */
 
+// get label from sequence of BIOLabel
+var tags = [['other', 'other', 'b_food', 'i_food', 'other', 'other', 'other', 'other', 'other', 'other', 'other'], ['b_action', 'i_action', 'i_action', 'i_action', 'other', 'other', 'other']]
+var tokens = [['i', 'eat', 'nasi', 'goreng', 'for', 'breakfast', ',', 'lunch', ',', 'and', 'dinner'], ['i', 'eat', 'nasi', 'goreng', 'at', 'midnight', 'too']]
+BIOLabel.getLabelFromSequence(tags, tokens)
+/*
+{ 
+  food: [ 'nasi goreng' ],
+  action: [ 'i eat nasi goreng' ]
+}
+*/
+
 ```
 
 ### Feature

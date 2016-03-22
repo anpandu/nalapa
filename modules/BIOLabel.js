@@ -64,4 +64,38 @@ BIOLabel.prototype.label = function(_data) {
   return data
 }
 
+BIOLabel.prototype.getLabelFromSequence = function(tags, tokens) {
+  var START = 'START'
+  var STOP = 'STOP'
+  var all_predicted_tags = _.flatten(tags)
+  var all_tokens = _.flatten(tokens)
+  var entities = {}
+  tags.forEach(function (sequence, idx) {
+    var state = STOP
+    var entity = []
+    var predicted_tag = ''
+    sequence.forEach(function (tag, jdx) {
+      if (tag.match(/other/) || predicted_tag != tag.slice(2)) {
+        if (!_.isEmpty(entity)) {
+          entities[predicted_tag] = (_.isUndefined(entities[predicted_tag])) ? [] : entities[predicted_tag]
+          entities[predicted_tag].push(entity.join(' '))
+        }
+        entity = []
+        state = STOP
+      }
+      if (tag.match(/b_.*/)) {
+        predicted_tag = tag.slice(2)
+        state = START
+      }
+      if (state == START)
+        entity.push(tokens[idx][jdx])
+    })
+    if (entity.length > 0)
+      entities[predicted_tag].push(entity.join(' '))
+  })
+  var valid_tags = Object.keys(entities)
+  valid_tags.forEach(function (t) { entities[t] = _.uniq(entities[t]) })
+  return entities
+}
+
 module.exports = new BIOLabel ()
