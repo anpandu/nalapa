@@ -85,4 +85,12 @@ describe('BIOLabel', function () {
     assert.deepEqual(res, ans)
   })
 
+  it('getLabelFromSequence', function () {
+    var tags = [['other', 'other', 'b_food', 'i_food', 'other', 'other', 'other', 'other', 'other', 'other', 'other'], ['b_action', 'i_action', 'i_action', 'i_action', 'other', 'other', 'other']]
+    var tokens = [['i', 'eat', 'nasi', 'goreng', 'for', 'breakfast', ',', 'lunch', ',', 'and', 'dinner'], ['i', 'eat', 'nasi', 'goreng', 'at', 'midnight', 'too']]
+    var ans = { food: [ 'nasi goreng' ], action: [ 'i eat nasi goreng' ] }
+    var res = BIOLabel.getLabelFromSequence(tags, tokens)
+    assert.deepEqual(res, ans)
+  })
+
 })
