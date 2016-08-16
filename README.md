@@ -54,27 +54,27 @@ Tokenizer.getQuotations(text);
 Word = require('nalapa').word;
 
 // stopword
-word.isStopword("adalah") // true
-word.isStopword("Indonesia") // false
+Word.isStopword("adalah") // true
+Word.isStopword("Indonesia") // false
 
 // basic word properties
-word.isBasicWord('masak')  // true
-word.isAdjective('abadi')  // true
-word.isAdverb('adakala')  // true
-word.isNum('wahid')  // true
-word.isPre('adapun')  // true
-word.isPron('aku')  // true
-word.isVerb('ambil')  // true
-word.isBasicWord('wrongxxx') // false
+Word.isBasicWord('masak')  // true
+Word.isAdjective('abadi')  // true
+Word.isAdverb('adakala')  // true
+Word.isNum('wahid')  // true
+Word.isPre('adapun')  // true
+Word.isPron('aku')  // true
+Word.isVerb('ambil')  // true
+Word.isBasicWord('wrongxxx') // false
 
 // stemming
-word.stem('memberikan') // beri
-word.stem('meong') // meong
+Word.stem('memberikan') // beri
+Word.stem('meong') // meong
 
 // stemming for prefix, suffix, or confix
-word.stemPrefix('penyadap') // sadap
-word.stemSuffix('minuman') // minum
-word.stemConfix('memberikan') // beri
+Word.stemPrefix('penyadap') // sadap
+Word.stemSuffix('minuman') // minum
+Word.stemConfix('memberikan') // beri
 
 ```
 
@@ -184,33 +184,33 @@ BIOLabel.getLabelFromSequence(tags, tokens)
 
 ### Feature
 ```js
-feature = require('nalapa').feature;
+Feature = require('nalapa').feature;
 
-feature.isEquals('hehe', 'hehe') // true
-feature.isEquals('hehe', 'hoho') // false
+Feature.isEquals('hehe', 'hehe') // true
+Feature.isEquals('hehe', 'hoho') // false
 
-feature.isAllCapital('ABCD') // true
-feature.isAllCapital('Abcd') // false
+Feature.isAllCapital('ABCD') // true
+Feature.isAllCapital('Abcd') // false
 
-feature.isBeginsWithCapital('ABc') // true
-feature.isBeginsWithCapital('aBC') // false
+Feature.isBeginsWithCapital('ABc') // true
+Feature.isBeginsWithCapital('aBC') // false
 
-feature.isContainsNumber('he1he') // true
-feature.isContainsNumber('hehe') // false
+Feature.isContainsNumber('he1he') // true
+Feature.isContainsNumber('hehe') // false
 
-feature.isContainsYear('1985haihai') // true
-feature.isContainsYear('hoho') // false
-feature.isContainsYear('666') // false
+Feature.isContainsYear('1985haihai') // true
+Feature.isContainsYear('hoho') // false
+Feature.isContainsYear('666') // false
 
-feature.isRomanNumber('MCMXCII') // true
-feature.isRomanNumber('MCMXCIIPOPO') // false
+Feature.isRomanNumber('MCMXCII') // true
+Feature.isRomanNumber('MCMXCIIPOPO') // false
 
-feature.isContainsNonAlphanumeric('abc') // false
-feature.isContainsNonAlphanumeric('@bc') // true
+Feature.isContainsNonAlphanumeric('abc') // false
+Feature.isContainsNonAlphanumeric('@bc') // true
 
-feature.isContainsPunctuation('abcd;') // true
-feature.isContainsPunctuation(';') // true
-feature.isContainsPunctuation('abcd') // false
+Feature.isContainsPunctuation('abcd;') // true
+Feature.isContainsPunctuation(';') // true
+Feature.isContainsPunctuation('abcd') // false
 
 ```
 
